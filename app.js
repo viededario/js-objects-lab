@@ -20,11 +20,11 @@ const game = {
 };
 
 // exercise uno
-//    const nameOfPokemon = pokemon[58].name
-//   console.log(nameOfPokemon)
+   const nameOfPokemon = pokemon[58].name
+  console.log(nameOfPokemon)
 
 // exercise dos
-// console.log(game)
+console.log(game)
 
 /*
 Exercise 3
@@ -108,26 +108,23 @@ Solve Exercise 7 here:
 // - Kadabra
 // - Geodude
 
-// Find the starter Pokémon in your party
 const basedPokemon = game.party.find((p) => p.starter === true);
 let evolvedPokemon;
 
-// Check if a starter Pokémon was found
 if (!basedPokemon) {
   console.error("No starter Pokémon found in your party.");
 } else {
-  // Determine the evolved form based on the starter Pokémon's name
   if (basedPokemon.name === "Bulbasaur") {
-    evolvedPokemon = pokemon.find((p) => p.id === 2); // Ivysaur
+    evolvedPokemon = pokemon.find((p) => p.id === 2); 
   } else if (basedPokemon.name === "Charmander") {
-    evolvedPokemon = pokemon.find((p) => p.id === 5); // Charmeleon
+    evolvedPokemon = pokemon.find((p) => p.id === 5); 
   } else if (basedPokemon.name === "Squirtle") {
-    evolvedPokemon = pokemon.find((p) => p.id === 8); // Wartortle
+    evolvedPokemon = pokemon.find((p) => p.id === 8); 
   } else if (basedPokemon.name === "Pikachu") {
-    evolvedPokemon = pokemon.find((p) => p.id === 26); // Raichu
+    evolvedPokemon = pokemon.find((p) => p.id === 26); 
   }
 
-  // Replace the existing starter Pokémon with its evolved form in the party array
+  
   const index = game.party.indexOf(starterPokemon);
   if (index !== -1 && evolvedPokemon) {
     game.party.splice(index, 1, evolvedPokemon);
@@ -137,7 +134,7 @@ if (!basedPokemon) {
   }
 }
 
-// Log the updated game object to verify the changes
+
 console.log(game);
 
 /*
@@ -181,22 +178,22 @@ After writing this method, call it and pass in a Pokemon object of your choice f
 Solve Exercise 10 here:
 */
 
-// Method to catch Pokémon
+
 game.catchPokemon = function(pokemonObj) {
     this.party.push(pokemonObj);
 };
 
-// Find Kadabra in the pokemon array
+
 const wildKadabra = pokemon.find(p => p.name === "Kadabra");
 
-// Check if Kadabra was found before trying to catch it
+
 if (wildKadabra) {
     game.catchPokemon(wildKadabra);
 } else {
     console.log("Kadabra not found in the pokemon array.");
 }
 
-// Log the game object to see the changes
+
 console.log(game);
 
 /*
